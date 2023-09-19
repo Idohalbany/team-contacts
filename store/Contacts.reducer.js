@@ -2,11 +2,15 @@ import { contactsService } from '../services/contacts.service.local.js'
 
 export const REMOVE_CONTACT = 'REMOVE_TODO'
 export const CONTACT_UNDO = 'CONTACT_UNDO'
+export const SET_CONTACTS = 'SET_CONTACTS'
+export const SET_FILTER = 'SET_FILTER'
+export const SET_SORT = 'SET_SORT'
 
 const initialState = {
   contacts: [],
   lastContacts: [],
   filterBy: contactsService.getDefaultFilter(),
+  sortBy: null,
   user: null,
 }
 
@@ -17,13 +21,15 @@ export function ContactsReducer(state = initialState, action) {
   switch (action.type) {
     case 'SET_CONTACTS':
       return { ...state, contacts: action.contacts }
-    case 'SET_FILTER':
+    case SET_FILTER:
       return { ...state, filterBy: action.filterBy }
+    case SET_SORT:
+      return { ...state, sortBy: action.sortBy }
     case 'SET_USER':
       return { ...state, user: action.user }
 
     case 'REMOVE_TODO':
-      contacts = state.contacts.filter(contact => contact._id !== action.contact)
+      contacts = state.contacts.filter((contact) => contact._id !== action.contact)
       return { ...state, user: action.user, lastContacts }
 
     case 'CONTACT_UNDO':

@@ -1,7 +1,6 @@
 const { Link } = ReactRouterDOM
 
 export function ContactsPreview({ contact }) {
-  console.log(contact)
   return (
     <div className='contacts-item'>
       <div className='contact-name'>

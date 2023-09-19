@@ -1,20 +1,18 @@
-const { useState } = React
+const { useDispatch, useSelector } = ReactRedux
+import { setFilter, setSort } from '../store/contacts.actions.js'
 
-export function ContactsFilter({ onSetFilter, onSetSort }) {
-  const [filterBy, setFilterBy] = useState({
-    txt: '',
-    mail: '',
-    phone: '',
-  })
+export function ContactsFilter() {
+  const dispatch = useDispatch()
+  const filterBy = useSelector((state) => state.contactsModule.filterBy)
 
   function handleSortChange(event) {
-    onSetSort(event.target.value)
+    dispatch(setSort(event.target.value))
   }
 
   function handleChange(event) {
     const { name, value } = event.target
-    setFilterBy((prevFilter) => ({ ...prevFilter, [name]: value }))
-    onSetFilter({ ...filterBy, [name]: value })
+    const updatedFilter = { ...filterBy, [name]: value }
+    dispatch(setFilter(updatedFilter))
   }
 
   return (

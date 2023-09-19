@@ -1,35 +1,30 @@
 import { contactsService } from '../services/contacts.service.local.js'
 import { ContactsList } from '../cmps/ContactsList.jsx'
 import { ContactsFilter } from '../cmps/ContactsFilter.jsx'
-const { useState, useEffect } = React
+const { useEffect } = React
+const { useDispatch, useSelector } = ReactRedux
+import { setContacts } from '../store/contacts.actions.js'
 
 export function ContactsIndex() {
-  const [contacts, setContacts] = useState([])
-  const [filterBy, setFilterBy] = useState(null)
+  const dispatch = useDispatch()
+  const contacts = useSelector((state) => state.contactsModule.contacts)
+  const filterBy = useSelector((state) => state.contactsModule.filterBy)
+  const sortBy = useSelector((state) => state.contactsModule.sortBy)
 
   useEffect(() => {
-    loadContacts()
-  }, [])
+    loadContacts(filterBy, sortBy)
+  }, [filterBy, sortBy])
 
   function loadContacts(currentFilter = null, sortBy = null) {
     contactsService.query(currentFilter, sortBy).then((contacts) => {
-      setContacts(contacts)
+      dispatch(setContacts(contacts))
     })
-  }
-
-  function handleSetFilter(newFilter) {
-    setFilterBy(newFilter)
-    loadContacts(newFilter)
-  }
-
-  function handleSetSort(sortBy) {
-    loadContacts(filterBy, sortBy)
   }
 
   if (contacts.length === 0) return <div>No Contacts to show...</div>
   return (
     <main className='main-app'>
-      <ContactsFilter onSetFilter={handleSetFilter} onSetSort={handleSetSort} />
+      <ContactsFilter />
       <ContactsList contacts={contacts} />
     </main>
   )
