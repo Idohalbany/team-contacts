@@ -1,5 +1,6 @@
 const { useDispatch, useSelector } = ReactRedux
 import { setFilter, setSort } from '../store/Contacts.actions.js'
+const { Link } = ReactRouterDOM
 
 export function ContactsFilter() {
   const dispatch = useDispatch()
@@ -44,6 +45,9 @@ export function ContactsFilter() {
         <option value='emailAsc'>Email (A-Z)</option>
         <option value='emailDesc'>Email (Z-A)</option>
       </select>
+      <Link to={`/contacts/add`}>
+        <button className='add-btn'>Add</button>
+      </Link>
     </div>
   )
 }

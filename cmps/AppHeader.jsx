@@ -3,7 +3,7 @@ const { NavLink } = ReactRouterDOM
 export function AppHeader() {
   return (
     <header className='app-header'>
-      <h3>Team Contacts</h3>
+      <h3>Contacts</h3>
       <nav>
         <NavLink className='nav-link home' to='/'>
           Home

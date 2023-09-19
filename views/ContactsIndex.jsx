@@ -8,7 +8,7 @@ const { useDispatch, useSelector } = ReactRedux
 
 export function ContactsIndex() {
   const dispatch = useDispatch()
-  const { contacts, filterBy, sortBy } = useSelector(state => state.contactsModule)
+  const { contacts, filterBy, sortBy } = useSelector((state) => state.contactsModule)
 
   useEffect(() => {
     loadContacts(filterBy, sortBy)
@@ -20,11 +20,14 @@ export function ContactsIndex() {
     })
   }
 
-  if (!contacts || contacts.length === 0) return <div>No Contacts to show...</div>
   return (
     <main className='main-app'>
       <ContactsFilter />
-      <ContactsList contacts={contacts} />
+      {!contacts || contacts.length === 0 ? (
+        <div>No Contacts to show...</div>
+      ) : (
+        <ContactsList contacts={contacts} />
+      )}
     </main>
   )
 }
