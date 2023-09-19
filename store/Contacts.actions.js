@@ -17,11 +17,12 @@ export function setContacts(contacts) {
 
 export function removeContact(contactId) {
   store.dispatch({ type: REMOVE_CONTACT, contactId })
-  return contactsService.remove(contactId).catch((err) => {
-    store.dispatch({ type: CONTACT_UNDO })
-    console.error('Cannot remove contact:', err)
-    throw err
-  })
+  return contactsService.remove(contactId)
+    .catch((err) => {
+      store.dispatch({ type: CONTACT_UNDO })
+      console.error('Cannot remove contact:', err)
+      throw err
+    })
 }
 
 export function setFilter(filterBy) {

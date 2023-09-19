@@ -1,9 +1,10 @@
 import { contactsService } from '../services/contacts.service.local.js'
 import { ContactsList } from '../cmps/ContactsList.jsx'
 import { ContactsFilter } from '../cmps/ContactsFilter.jsx'
+import { setContacts } from '../store/Contacts.actions.js'
+
 const { useEffect } = React
 const { useDispatch, useSelector } = ReactRedux
-import { setContacts } from '../store/contacts.actions.js'
 
 export function ContactsIndex() {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export function ContactsIndex() {
     })
   }
 
-  if (contacts.length === 0) return <div>No Contacts to show...</div>
+  if (!contacts || contacts.length === 0) return <div>No Contacts to show...</div>
   return (
     <main className='main-app'>
       <ContactsFilter />
