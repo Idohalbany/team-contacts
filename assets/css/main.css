@@ -19,6 +19,7 @@
 @import './cmps/ContactsPreview.css';
 @import './cmps/ContactsFilter.css';
 @import './cmps/EditContacts.css';
+@import './cmps/ContactsAdd.css';
 
 /* Media queries */
 @import './setup/mq.css';

@@ -1,5 +1,5 @@
 const { useDispatch, useSelector } = ReactRedux
-import { setFilter, setSort } from '../store/contacts.actions.js'
+import { setFilter, setSort } from '../store/Contacts.actions.js'
 
 export function ContactsFilter() {
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ export function ContactsFilter() {
     const updatedFilter = { ...filterBy, [name]: value }
     dispatch(setFilter(updatedFilter))
   }
-  
+
   return (
     <div className='filter-container'>
       <input

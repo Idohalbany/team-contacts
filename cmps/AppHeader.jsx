@@ -8,7 +8,7 @@ export function AppHeader() {
         <NavLink className='nav-link home' to='/'>
           Home
         </NavLink>
-        <NavLink className='nav-link about' to='/about'>
+        <NavLink className='nav-link' to='/about'>
           About
         </NavLink>
         <NavLink className='nav-link contacts-link' to='/contacts'>

@@ -26,13 +26,31 @@ export function About() {
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi corporis reprehenderit
         inventore minus sint ratione sit rerum molestias alias, ex quod aut eligendi, provident
-        reiciendis!
+        reiciendis! odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita eveniet
+        non. Libero perferendis vero expedita! Suscipit dolorem deserunt molestias animi.
       </p>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, accusamus! Optio temporibus
         modi, perferendis odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita
         eveniet non. Libero perferendis vero expedita! Suscipit dolorem deserunt molestias animi.
       </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, accusamus! Optio temporibus
+        modi, perferendis odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita
+        eveniet non. Libero perferendis vero expedita! Suscipit dolorem deserunt molestias animi.
+        odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita eveniet non. Libero
+        perferendis vero expedita! Suscipit dolorem deserunt molestias animi.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, accusamus! Optio temporibus
+        modi, perferendis odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita
+        eveniet non. Libero perferendis vero expedita! Suscipit dolorem deserunt molestias animi.
+        odit soluta doloremque aliquam odio velit, sed earum nesciunt expedita eveniet non. Libero
+        perferendis vero expedita! Suscipit dolorem deserunt molestias animi. odit soluta doloremque
+        aliquam odio velit, sed earum nesciunt expedita eveniet non. Libero perferendis vero
+        expedita! Suscipit dolorem deserunt molestias animi.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, acja kddd input.</p>
     </section>
   )
 }
