@@ -63,7 +63,7 @@ function getById(contactId) {
 // save //
 
 function save(contact) {
-  if (contact.id) {
+  if (contact._id) {
     return storageService.put(STORAGE_KEY, contact)
   } else {
     return storageService.post(STORAGE_KEY, contact)
@@ -79,7 +79,7 @@ function remove(contactId) {
 // default todo //
 
 function getEmptyContacts() {
-  return { fitstName: '', lastName: '', mail: '', phone: '', desc: '' }
+  return { firstName: '', lastName: '', mail: '', phone: '', desc: '' }
 }
 
 // default filter //

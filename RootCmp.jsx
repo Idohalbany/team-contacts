@@ -1,14 +1,15 @@
+const { Provider } = ReactRedux
 const { Route, Routes } = ReactRouterDOM
 const Router = ReactRouterDOM.HashRouter
-const { Provider } = ReactRedux
-import { store } from './store/store.js'
 
-import { AppHeader } from './cmps/AppHeader.jsx'
 import { Home } from './views/Home.jsx'
-import { ContactsIndex } from './views/ContactsIndex.jsx'
 import { About } from './views/About.jsx'
+import { AppHeader } from './cmps/AppHeader.jsx'
+import { ContactsIndex } from './views/ContactsIndex.jsx'
 import { ContactsDetails } from './views/ContactsDetails.jsx'
-import { EditContacts } from './views/EditContacts.jsx'
+import { ContactEdit } from './views/ContactEdit.jsx'
+
+import { store } from './store/store.js'
 
 export function App() {
   return (
@@ -19,7 +20,8 @@ export function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/contacts' element={<ContactsIndex />} />
-            <Route path='/contacts/edit' element={<EditContacts />} />
+            <Route path='/contacts/edit' element={<ContactEdit />} />
+            <Route path='/contacts/edit/:contactId' element={<ContactEdit />} />
             <Route path='/contacts/:contactId' element={<ContactsDetails />} />
             <Route path='/about' element={<About />} />
           </Routes>
