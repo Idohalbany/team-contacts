@@ -43,7 +43,7 @@ export function ContactEdit() {
   function onSaveContact(ev) {
     ev.preventDefault()
     contactsService.save(contactToEdit)
-      .then(() => navigate('/contact'))
+      .then(() => navigate('/contacts'))
       .catch(err => showErrorMsg('Cannot save contact', err))
   }
 

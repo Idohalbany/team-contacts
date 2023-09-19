@@ -63,7 +63,7 @@ function getById(contactId) {
 // save //
 
 function save(contact) {
-  if (contact.id) {
+  if (contact._id) {
     return storageService.put(STORAGE_KEY, contact)
   } else {
     return storageService.post(STORAGE_KEY, contact)
