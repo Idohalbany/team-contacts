@@ -32,6 +32,7 @@ export function ContactsDetails() {
         navigate('/contacts')
       })
       .catch(err => {
+        navigate('/contacts')
         console.log('Cannot remove Contact', err)
         // showErrorMsg('Cannot remove Contact')
       })

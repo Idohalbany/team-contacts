@@ -29,8 +29,10 @@ export function ContactsReducer(state = initialState, action) {
       return { ...state, user: action.user }
 
     case 'REMOVE_TODO':
-      contacts = state.contacts.filter((contact) => contact._id !== action.contact)
-      return { ...state, user: action.user, lastContacts }
+      lastContacts = [...state.contacts]
+      contacts = state.contacts.filter((contact) => contact._id !== action.contactId)
+      return { ...state, contacts, lastContacts }
+
 
     case 'CONTACT_UNDO':
       contacts = [...state.lastContacts]
