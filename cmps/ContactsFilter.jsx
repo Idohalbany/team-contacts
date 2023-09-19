@@ -14,7 +14,7 @@ export function ContactsFilter() {
     const updatedFilter = { ...filterBy, [name]: value }
     dispatch(setFilter(updatedFilter))
   }
-
+  
   return (
     <div className='filter-container'>
       <input
