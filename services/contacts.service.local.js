@@ -21,14 +21,14 @@ export const contactsService = {
 function query(filterBy = {}) {
   return storageService.query(STORAGE_KEY).then((contacts) => {
     let filteredContacts = contacts
-    if (filterBy.status) {
-      filteredContacts = filteredContacts.filter((contact) => contact.status === filterBy.status)
-    }
-    if (filterBy.searchTxt) {
-      filteredContacts = filteredContacts.filter((contact) =>
-        contact.txt.includes(filterBy.searchTxt)
-      )
-    }
+    // if (filterBy.status) {
+    //   filteredContacts = filteredContacts.filter((contact) => contact.status === filterBy.status)
+    // }
+    // if (filterBy.searchTxt) {
+    //   filteredContacts = filteredContacts.filter((contact) =>
+    //     contact.txt.includes(filterBy.searchTxt)
+    //   )
+    // }
     return filteredContacts
   })
 }
@@ -58,13 +58,13 @@ function remove(contactId) {
 // default todo //
 
 function getEmptyContacts() {
-  return { txt: '', status: '' }
+  return { name: '', mail: '', phone: '' }
 }
 
 // default filter //
 
 function getDefaultFilter() {
-  return { status: '', searchTxt: '' }
+  return { name: '', mail: '', phone: '' }
 }
 
 // create todos //
@@ -73,8 +73,13 @@ function _createContacts() {
   let contacts = utilService.loadFromStorage(STORAGE_KEY)
   if (!contacts || !contacts.length) {
     contacts = [
-      { txt: 'Ido Halbany', status: 'active', id: utilService.makeId() },
-      { txt: 'Nati Feldbaum', status: 'active', id: utilService.makeId() },
+      { name: 'Ido Halbany', mail: 'ido@mail.com', phone: '0548849292', id: utilService.makeId() },
+      {
+        name: 'Nati Feldbaum',
+        mail: 'nati@mail.com',
+        phone: '0544839492',
+        id: utilService.makeId(),
+      },
     ]
     utilService.saveToStorage(STORAGE_KEY, contacts)
   }
