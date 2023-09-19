@@ -74,7 +74,7 @@ function _createContacts() {
   if (!contacts || !contacts.length) {
     contacts = [
       {
-        fitstName: 'Ido',
+        firstName: 'Ido',
         lastName: 'Halbany',
         mail: 'ido@mail.com',
         phone: '0548849292',
@@ -82,7 +82,7 @@ function _createContacts() {
         _id: utilService.makeId(),
       },
       {
-        fitstName: 'Nati',
+        firstName: 'Nati',
         lastName: 'Feldbaum',
         mail: 'nati@mail.com',
         phone: '0544839492',
@@ -90,7 +90,7 @@ function _createContacts() {
         _id: utilService.makeId(),
       },
       {
-        fitstName: 'Alfi',
+        firstName: 'Alfi',
         lastName: 'Al',
         mail: 'alfi@mail.com',
         phone: '0544849292',
@@ -98,7 +98,7 @@ function _createContacts() {
         _id: utilService.makeId(),
       },
       {
-        fitstName: 'Gal',
+        firstName: 'Gal',
         lastName: 'Fel',
         mail: 'gal@mail.com',
         phone: '0544499492',
