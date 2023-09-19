@@ -1,6 +1,8 @@
+import { contactsService } from '../services/contacts.service.local.js'
+
 const initialState = {
   contacts: [],
-  filterBy: { name: '', mail: '', phone: '' },
+  filterBy: contactsService.getDefaultFilter(),
   user: null,
 }
 
