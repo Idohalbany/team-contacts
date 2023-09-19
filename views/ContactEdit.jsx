@@ -53,21 +53,21 @@ export function ContactEdit() {
     <section className="contact-edit">
       <form onSubmit={ev => onSaveContact(ev)} >
         <label htmlFor="firstName">First name:</label>
-        <input onChange={ev => handleChange(ev)} value={firstName} type="text" name="firstName" id="firstName" />
+        <input onChange={ev => handleChange(ev)} value={firstName} type="text" name="firstName" id="firstName" className="input input-first-name" />
 
         <label htmlFor="lastName">Last name:</label>
-        <input onChange={ev => handleChange(ev)} value={lastName} type="text" name="lastName" id="lastName" />
+        <input onChange={ev => handleChange(ev)} value={lastName} type="text" name="lastName" id="lastName" className="input input-last-name" />
 
         <label htmlFor="mail">Email:</label>
-        <input onChange={ev => handleChange(ev)} value={mail} type="email" name="mail" id="mail" />
+        <input onChange={ev => handleChange(ev)} value={mail} type="email" name="mail" id="mail" className="input input-mail" />
 
         <label htmlFor="desc">Name:</label>
-        <input onChange={ev => handleChange(ev)} value={desc} type="text" name="desc" id="desc" />
+        <input onChange={ev => handleChange(ev)} value={desc} type="text" name="desc" id="desc" className="input input-desc" />
 
         <label htmlFor="phone">Phone number:</label>
-        <input onChange={ev => handleChange(ev)} value={phone} type="tel" name="phone" id="phone" />
+        <input onChange={ev => handleChange(ev)} value={phone} type="tel" name="phone" id="phone" className="input input-tel" />
 
-        <button>Save</button>
+        <button className="btn btn-save">Save</button>
       </form>
     </section>
   )

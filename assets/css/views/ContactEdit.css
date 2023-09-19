@@ -1,0 +1,61 @@
+.contact-edit {
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 80vw) minmax(20px, 1fr);
+    gap: 0.5em;
+    width: 100%;
+}
+
+.contact-edit>* {
+    grid-column: 2;
+}
+
+.contact-edit:first-of-type {
+    margin-block-start: 1em;
+}
+
+.contact-edit .input {
+    padding: 10px 15px;
+    border: 1px solid #d1d5da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-edit .input:focus {
+    border-color: #0077b6;
+    outline: none;
+}
+
+.contact-edit input::placeholder {
+    color: #888888;
+    font-style: italic;
+}
+
+.contact-edit .input {
+    border: 1px solid var(--secondery);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-edit .input:hover {
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-edit .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: var(--primary);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-edit .btn:hover {
+    background-color: #0056b3;
+}

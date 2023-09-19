@@ -44,15 +44,19 @@ export function ContactsDetails() {
   return (
     <div className='contact-details'>
       <h2>Contacts Details</h2>
-      <br />
-      <h1>{firstName} {lastName}</h1>
-      <h4>{mail}</h4>
-      <p>{desc}</p>
-      <h2>{phone}</h2>
-      <h4>{_id}</h4>
 
-      <Link to={"/contacts/edit/" + contactId}><button>Edit</button></Link>
-      <button onClick={onRemove}>Remove</button>
+      <div className="contact-info">
+        <h1>{firstName} {lastName}</h1>
+        <h4>{mail}</h4>
+        <p>{desc}</p>
+        <h2>{phone}</h2>
+        <h4>{_id}</h4>
+
+        <Link to={"/contacts/edit/" + contactId} className="link"><button className="btn btn-edit">Edit</button></Link>
+        <button className="btn btn-remove" onClick={onRemove}>Remove</button>
+
+      </div>
+
     </div>
   )
 }

@@ -11,6 +11,7 @@
 @import './views/ContactsDetails.css';
 @import './views/UserProfile.css';
 @import './views/About.css';
+@import './views/ContactEdit.css';
 
 /* Cmps */
 @import './cmps/UserMsg.css';
@@ -18,7 +19,6 @@
 @import './cmps/ContactsList.css';
 @import './cmps/ContactsPreview.css';
 @import './cmps/ContactsFilter.css';
-@import './cmps/EditContacts.css';
 @import './cmps/ContactsAdd.css';
 
 /* Media queries */
