@@ -8,9 +8,7 @@ const { useDispatch, useSelector } = ReactRedux
 
 export function ContactsIndex() {
   const dispatch = useDispatch()
-  const contacts = useSelector((state) => state.contactsModule.contacts)
-  const filterBy = useSelector((state) => state.contactsModule.filterBy)
-  const sortBy = useSelector((state) => state.contactsModule.sortBy)
+  const { contacts, filterBy, sortBy } = useSelector(state => state.contactsModule)
 
   useEffect(() => {
     loadContacts(filterBy, sortBy)

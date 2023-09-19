@@ -79,7 +79,7 @@ function remove(contactId) {
 // default todo //
 
 function getEmptyContacts() {
-  return { fitstName: '', lastName: '', mail: '', phone: '', desc: '' }
+  return { firstName: '', lastName: '', mail: '', phone: '', desc: '' }
 }
 
 // default filter //
