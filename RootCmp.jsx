@@ -8,6 +8,7 @@ import { Home } from './views/Home.jsx'
 import { ContactsIndex } from './views/ContactsIndex.jsx'
 import { About } from './views/About.jsx'
 import { ContactsDetails } from './views/ContactsDetails.jsx'
+import { EditContacts } from './views/EditContacts.jsx'
 
 export function App() {
   return (
@@ -18,6 +19,7 @@ export function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/contacts' element={<ContactsIndex />} />
+            <Route path='/contacts/edit' element={<EditContacts />} />
             <Route path='/contacts/:contactId' element={<ContactsDetails />} />
             <Route path='/about' element={<About />} />
           </Routes>
