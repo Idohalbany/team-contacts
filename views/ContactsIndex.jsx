@@ -1,6 +1,7 @@
 import { contactsService } from '../services/contacts.service.local.js'
 import { ContactsList } from '../cmps/ContactsList.jsx'
 import { ContactsFilter } from '../cmps/ContactsFilter.jsx'
+import { setContacts } from '../store/Contacts.actions.js'
 
 const { useEffect } = React
 const { useDispatch, useSelector } = ReactRedux
