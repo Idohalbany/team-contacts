@@ -5,6 +5,7 @@ export const CONTACT_UNDO = 'CONTACT_UNDO'
 export const SET_CONTACTS = 'SET_CONTACTS'
 export const SET_FILTER = 'SET_FILTER'
 export const SET_SORT = 'SET_SORT'
+export const ADD_NEW_CONTACT = 'ADD_NEW_CONTACT'
 
 const initialState = {
   contacts: [],
@@ -20,6 +21,7 @@ export function ContactsReducer(state = initialState, action) {
 
   switch (action.type) {
     case 'SET_CONTACTS':
+      // console.log(action.contacts)
       return { ...state, contacts: action.contacts }
     case SET_FILTER:
       return { ...state, filterBy: action.filterBy }
@@ -32,7 +34,6 @@ export function ContactsReducer(state = initialState, action) {
       lastContacts = [...state.contacts]
       contacts = state.contacts.filter((contact) => contact._id !== action.contactId)
       return { ...state, contacts, lastContacts }
-
 
     case 'CONTACT_UNDO':
       contacts = [...state.lastContacts]

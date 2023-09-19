@@ -1,7 +1,12 @@
 const { useState } = React
+const { useNavigate } = ReactRouterDOM
+const { useDispatch } = ReactRedux
+import { setContacts } from '../store/Contacts.actions.js'
 import { contactsService } from '../services/contacts.service.local.js'
 
-export function ContactsAdd({ onAddContact }) {
+export function ContactsAdd() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [contact, setContact] = useState(contactsService.getEmptyContacts())
 
   function handleChange(event) {
@@ -12,8 +17,13 @@ export function ContactsAdd({ onAddContact }) {
   function handleSubmit(event) {
     event.preventDefault()
     contactsService.save(contact).then((savedContact) => {
-      onAddContact(savedContact)
+      // Update the global state with the new contact
+      contactsService.query().then((contacts) => {
+        dispatch(setContacts(contacts))
+      })
+
       setContact(contactsService.getEmptyContacts())
+      navigate('/contacts')
     })
   }
 

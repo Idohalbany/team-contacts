@@ -22,14 +22,31 @@ function query(filterBy = null, sortBy = null) {
   return storageService.query(STORAGE_KEY).then((contacts) => {
     let filteredContacts = contacts
     if (filterBy) {
-      filteredContacts = contacts.filter((contact) => {
-        const isNameMatch =
-          contact.firstName.toLowerCase().includes(filterBy.txt.toLowerCase()) ||
-          contact.lastName.toLowerCase().includes(filterBy.txt.toLowerCase())
-        const isEmailMatch = contact.mail.toLowerCase().includes(filterBy.mail.toLowerCase())
-        const isPhoneMatch = contact.phone.includes(filterBy.phone)
-        return isNameMatch && isEmailMatch && isPhoneMatch
-      })
+      const { txt, mail, phone } = filterBy
+
+      if (txt) {
+        const searchStr = txt.toLowerCase()
+        filteredContacts = filteredContacts.filter(
+          (contact) =>
+            contact.firstName.toLowerCase().includes(searchStr) ||
+            contact.lastName.toLowerCase().includes(searchStr)
+        )
+      }
+
+      if (mail) {
+        const searchMail = mail.toLowerCase()
+        filteredContacts = filteredContacts.filter((contact) =>
+          contact.mail.toLowerCase().includes(searchMail)
+        )
+      }
+
+      if (phone) {
+        filteredContacts = filteredContacts.filter((contact) => contact.phone.includes(phone))
+      }
+    }
+
+    if (!filteredContacts) {
+      return
     }
 
     if (sortBy) {
