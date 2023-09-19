@@ -1,0 +1,54 @@
+.main-app {
+  display: grid;
+  place-items: center;
+  min-height: 85vh;
+}
+
+.add-todo,
+.filter-section,
+.todo-list {
+  margin: 20px;
+}
+
+.new-todo {
+  position: relative;
+}
+
+.add-todo input[type='text'] {
+  width: 540px;
+  max-width: 540px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.todo-txt-done {
+  text-decoration: line-through;
+}
+
+.todo-active {
+  color: red;
+}
+
+.todo-done {
+  color: green;
+}
+
+.add-btn {
+  position: absolute;
+  right: 35px;
+  top: 54%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #0077cc;
+  border: none;
+  font-size: 2.3rem;
+  cursor: pointer;
+}
+
+.filter-section {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}

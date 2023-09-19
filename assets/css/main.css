@@ -1,0 +1,24 @@
+/* Setup */
+@import './setup/variables.css';
+
+/* Basics */
+@import './basics/base.css';
+@import './basics/helpers.css';
+
+/* Views */
+@import './views/Home.css';
+@import './views/ContactsIndex.css';
+@import './views/ContactsDetails.css';
+@import './views/UserProfile.css';
+@import './views/About.css';
+
+/* Cmps */
+@import './cmps/UserMsg.css';
+@import './cmps/AppHeader.css';
+@import './cmps/ContactsList.css';
+@import './cmps/ContactsPreview.css';
+@import './cmps/ContactsFilter.css';
+@import './cmps/EditContacts.css';
+
+/* Media queries */
+@import './setup/mq.css';
