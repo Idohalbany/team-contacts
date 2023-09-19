@@ -18,7 +18,7 @@ export const contactsService = {
 
 // query //
 
-function query(filterBy = {}) {
+function query() {
   return storageService.query(STORAGE_KEY).then((contacts) => {
     let filteredContacts = contacts
     // if (filterBy.status) {

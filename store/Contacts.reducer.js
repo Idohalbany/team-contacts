@@ -1,6 +1,6 @@
 const initialState = {
   contacts: [],
-  filterBy: { status: '', searchTxt: '' },
+  filterBy: { name: '', mail: '', phone: '' },
   user: null,
 }
 
