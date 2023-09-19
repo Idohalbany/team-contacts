@@ -18,17 +18,38 @@ export const contactsService = {
 
 // query //
 
-function query() {
+function query(filterBy = null, sortBy = null) {
   return storageService.query(STORAGE_KEY).then((contacts) => {
     let filteredContacts = contacts
-    // if (filterBy.status) {
-    //   filteredContacts = filteredContacts.filter((contact) => contact.status === filterBy.status)
-    // }
-    // if (filterBy.searchTxt) {
-    //   filteredContacts = filteredContacts.filter((contact) =>
-    //     contact.txt.includes(filterBy.searchTxt)
-    //   )
-    // }
+    if (filterBy) {
+      filteredContacts = contacts.filter((contact) => {
+        const isNameMatch =
+          contact.firstName.toLowerCase().includes(filterBy.txt.toLowerCase()) ||
+          contact.lastName.toLowerCase().includes(filterBy.txt.toLowerCase())
+        const isEmailMatch = contact.mail.toLowerCase().includes(filterBy.mail.toLowerCase())
+        const isPhoneMatch = contact.phone.includes(filterBy.phone)
+        return isNameMatch && isEmailMatch && isPhoneMatch
+      })
+    }
+
+    if (sortBy) {
+      switch (sortBy) {
+        case 'nameAsc':
+          filteredContacts.sort((a, b) => a.firstName.localeCompare(b.firstName))
+          break
+        case 'nameDesc':
+          filteredContacts.sort((a, b) => b.firstName.localeCompare(a.firstName))
+          break
+        case 'emailAsc':
+          filteredContacts.sort((a, b) => a.mail.localeCompare(b.mail))
+          break
+        case 'emailDesc':
+          filteredContacts.sort((a, b) => b.mail.localeCompare(a.mail))
+          break
+        default:
+          break
+      }
+    }
     return filteredContacts
   })
 }
