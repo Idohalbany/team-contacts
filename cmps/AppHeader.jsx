@@ -12,7 +12,7 @@ export function AppHeader() {
           About
         </NavLink>
         <NavLink className='nav-link contacts-link' to='/contacts'>
-          Todo
+          Contacts
         </NavLink>
       </nav>
     </header>
