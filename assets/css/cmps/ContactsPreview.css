@@ -1,0 +1,38 @@
+.contacts-item {
+  border: 1px solid var(--secondery);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.contacts-item:hover {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-name,
+.contact-email,
+.contact-phone,
+.contact-desc {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.details-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: var(--primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #0056b3;
+}
